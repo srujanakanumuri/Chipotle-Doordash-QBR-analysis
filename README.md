@@ -3,7 +3,7 @@
 **Project:** Q4 2024 Partnership QBR Analysis  
 **Dataset:** Synthetic Chipotle orders data 68,265 orders across 23 locations, 8 cities, Sept - Nov 2024  
 **Stack:** Google BigQuery + Looker Studio  
-**Live Dashboard:** [Link to Looker Studio]
+**Live Dashboard:** [https://datastudio.google.com/reporting/e1ba4d3b-246c-4846-b99e-7acd0eec752a]
 
 ---
 
