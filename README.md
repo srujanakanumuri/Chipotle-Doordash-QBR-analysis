@@ -1,7 +1,7 @@
 # Chipotle x DoorDash — SQL Analysis
 
 **Project:** Q4 2024 Partnership QBR Analysis  
-**Dataset:** Synthetic Chipotle orders data — 68,265 orders across 23 locations, 8 cities, Sept–Nov 2024  
+**Dataset:** Synthetic Chipotle orders data 68,265 orders across 23 locations, 8 cities, Sept - Nov 2024  
 **Stack:** Google BigQuery + Looker Studio  
 **Live Dashboard:** [Link to Looker Studio]
 
@@ -34,7 +34,7 @@
 | G03 | New vs returning customers by month and city |
 | G04 | Repeat rate and customer LTV by city and tier |
 | G05 | DashPass penetration and AOV impact by tier and city |
-| G06 | Channel mix (app / web / storefront) — orders, AOV, performance |
+| G06 | Channel mix (app / web / storefront) - orders, AOV, performance |
 | G07 | Location-level growth analysis with growing/stable/declining classification |
 
 ### Ops Track
@@ -43,7 +43,7 @@
 | O01 | Fulfillment time breakdown by restaurant and month |
 | O02 | Restaurant scorecard ranked by prep time and ops metrics |
 | O03 | Cancellation breakdown by reason, tier, city, and month |
-| O04 | Driver wait time ranking — which locations make drivers wait most |
+| O04 | Driver wait time ranking which - locations make drivers wait most |
 | O05 | Monthly prep time trend to identify operational deterioration |
 
 ### Classification Matrix
