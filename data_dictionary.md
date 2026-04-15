@@ -13,7 +13,7 @@
 | `customer_id` | STRING | Unique customer identifier. Repeats across orders for returning customers |
 | `restaurant_id` | STRING | Links to chipotle_restaurants.csv. Format: CHIP_XXXX |
 | `city` | STRING | One of 8 cities across 3 market tiers |
-| `market_tier` | STRING | Tier 1 / Tier 2 / Tier 3 — see tier definitions below |
+| `market_tier` | STRING | Tier 1 / Tier 2 / Tier 3 see tier definitions below |
 | `order_placed_datetime_utc` | TIMESTAMP | Start of the fulfillment chain |
 | `restaurant_accepted_datetime_utc` | TIMESTAMP | Restaurant confirms the order |
 | `driver_assigned_datetime_utc` | TIMESTAMP | DoorDash assigns a Dasher |
@@ -34,17 +34,6 @@
 | `driver_rating` | FLOAT | Customer rating of Dasher, 1–5. NULL for cancelled orders |
 | `month` | INTEGER | 9, 10, or 11 |
 | `month_name` | STRING | September, October, or November |
-
-### chipotle_restaurants.csv
-23 rows. One row per restaurant location.
-
-| Column | Type | Notes |
-|---|---|---|
-| `restaurant_id` | STRING | Matches restaurant_id in chipotle_orders.csv |
-| `city` | STRING | City of the location |
-| `market_tier` | STRING | Tier classification for the city |
-| `address` | STRING | Synthetic street address |
-| `opened_year` | INTEGER | Synthetic opening year |
 
 ---
 
@@ -111,8 +100,8 @@ Higher is better on both dimensions. Scores are relative — a restaurant is ran
 | **AOV** | Average Order Value. GMV / number of completed orders |
 | **DashPass** | DoorDash's subscription program. Members pay a monthly fee for reduced delivery fees. DashPass customers typically order more frequently and spend slightly more per order |
 | **Storefront** | Orders placed through Chipotle's own ordering interface, fulfilled by DoorDash. No DashPass flag, no promotional discounts, no delivery fee discount |
-| **Prep time** | Time from restaurant accepting an order to Dasher pickup. Entirely within the restaurant's control — the primary kitchen performance metric in this analysis |
+| **Prep time** | Time from restaurant accepting an order to Dasher pickup. Entirely within the restaurant's control the primary kitchen performance metric in this analysis |
 | **Driver wait time** | Time between Dasher arriving at the restaurant and picking up the order. Elevated driver wait is a downstream signal of slow kitchen prep, not a Dasher performance issue |
 | **Fulfillment time** | Total time from order placed to delivered. Decomposed as: accept time + prep time + driver wait + delivery time |
-| **Search ranking suppression** | When DoorDash's algorithm reduces a restaurant's visibility in search results due to sustained poor fulfillment metrics — typically triggered at fulfillment times above 45–50 minutes |
+| **Search ranking suppression** | When DoorDash's algorithm reduces a restaurant's visibility in search results due to sustained poor fulfillment metrics typically triggered at fulfillment times above 45–50 minutes |
 | **QBR** | Quarterly Business Review. A structured performance review between DoorDash and a restaurant partner covering the prior quarter's results and forward-looking recommendations |
