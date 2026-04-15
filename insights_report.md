@@ -11,6 +11,10 @@ Two problems sit underneath the surface stability. The first is operational: fou
 
 ---
 
+![Business Overview](Dashboards/Overview.png)
+
+---
+
 ## Section 1: Growth Analysis - Demand Side
 
 ### Market context
@@ -33,18 +37,6 @@ DashPass customers spend approximately $3–4 more per order than non-DashPass c
 
 ### New customer acquisition is declining in Tier 3
 
-New customer acquisition fell 53% in Denver between September and November from roughly 430 new customers in September to approximately 200 in November. Minneapolis shows a similar pattern. This is not a slow drift. It is a sharp decline happening over three months.
-
-Tier 1 and Tier 2 markets held their acquisition levels flat across the same period. The decline is specific to Tier 3.
-
-The likely cause is a compounding problem: Denver and Minneapolis have the highest cancellation rates (8.5% and 6.7%) and the highest refund rates in the portfolio. When new customers experience cancelled or refunded orders in their first interaction with a brand on a platform, they are significantly less likely to reorder. The customer acquisition problem in Tier 3 may not be a marketing problem it may be an operations problem. This connection is explored further in the ops section.
-
-### DashPass penetration is the clearest growth lever
-
-DashPass customers spend approximately $3–4 more per order than non-DashPass customers, consistently across all eight cities. The gap is modest but appears reliable in this data. The direction is likely explained by the profile of DashPass subscribers people who pay for a delivery subscription tend to be higher-frequency, higher-spend customers to begin with rather than DashPass causing the spend increase directly. Untangling selection effect from causal effect would require a more controlled analysis, such as comparing spend behavior for customers before and after subscribing to DashPass.
-
-### New customer acquisition is declining in Tier 3
-
 New customer acquisition fell 53% in Denver between September and November from roughly 430 new customers in September to approximately 200 in November. Minneapolis shows a similar pattern. Tier 1 and Tier 2 markets held acquisition levels flat across the same period.
 
 The decline is specific to Tier 3 and is sharp rather than gradual. One hypothesis is that Denver and Minneapolis's high cancellation rates (8.5% and 6.7%) and refund rates are creating poor first-order experiences that suppress reordering. On a two-sided marketplace, customer trust is built through reliable first interactions a failed or refunded first order is disproportionately damaging because it removes the chance of a second order before any loyalty has been established. This would make the acquisition problem a consequence of the ops problem, not an independent demand issue. That said, this is a correlation-based hypothesis. Confirming it would require first-order cohort retention data specifically, whether customers whose first Chipotle order was cancelled or refunded have materially lower 30-day reorder rates than customers whose first order completed successfully.
@@ -52,6 +44,8 @@ The decline is specific to Tier 3 and is sharp rather than gradual. One hypothes
 It is also worth considering whether Tier 3 markets face structural acquisition headwinds independent of ops — smaller cities may have lower baseline online ordering penetration, fewer DoorDash users per capita, or different competitive dynamics that limit the available customer pool regardless of execution quality. Both factors could be contributing simultaneously.
 
 ### DashPass penetration is worth investigating as a potential growth lever
+
+DashPass customers spend approximately $3–4 more per order than non-DashPass customers, consistently across all eight cities. The gap is modest but appears reliable in this data. The direction is likely explained by the profile of DashPass subscribers people who pay for a delivery subscription tend to be higher-frequency, higher-spend customers to begin with rather than DashPass causing the spend increase directly. 
 
 DashPass penetration ranges from 43% in SF to 21% in Denver a 22-point gap. Higher DashPass penetration correlates with higher per-order spend and, across DoorDash's platform generally, more frequent ordering behavior. Closing this gap in lower-penetration markets is worth exploring.
 
@@ -64,6 +58,10 @@ Additionally, pursuing DashPass growth in markets with 8.5% cancellation rates r
 Orders placed through Chipotle's direct ordering channel carry zero discount drag and have the highest AOV at $35.17, compared to approximately $34.50 for app and $34.30 for web orders. Storefront represents 17% of total orders a meaningful share already. Growing its share would improve margin without requiring new customer acquisition.
 
 One nuance worth acknowledging: storefront growth is inherently a tension point in the DoorDash-Chipotle partnership, since it routes orders through Chipotle's interface rather than DoorDash's. This is a strong oppurtunity to push the DoorDash E commerce solutions for enterprises. 
+
+![Demand Side Analysis](Dashboards/Growth%20analysis.png)
+
+![DashPass Analysis](Dashboards/Dashpass%20and%20subscriber%20economics.png)
 
 ---
 
@@ -80,6 +78,8 @@ The most concerning operational finding is the prep time trajectory at four spec
 | CHIP_1007 | Chicago | 22.2 mins | 28.1 mins | +2.9 mins/month |
 | CHIP_1011 | Brooklyn | 22.1 mins | 28.0 mins | +3.0 mins/month |
 | CHIP_1015 | Nashville | 21.8 mins | 28.0 mins | +3.1 mins/month |
+
+![Kitchen Performance and Classification Matrix](Dashboards/Supply%20side%20efficiency.png)
 
 The benchmark prep time at healthy locations is 13–14 minutes. These four are operating at roughly double the benchmark. What makes the pattern worth escalating is not just the current level it is the consistency and direction. Every other 19 locations fluctuate randomly within ±1 minute month over month, which is normal kitchen variance. These four have increased by approximately 3 minutes per month, every month, without reversal. That is a trend, not noise.
 
@@ -116,6 +116,8 @@ Denver's cancellation rate is 8.5% — three times higher than Chicago (2.8%) an
 The cancellation reason breakdown for Denver shows a disproportionately high share of `restaurant_closed` cancellations — orders placed when a location is offline or unavailable. This pattern suggests Denver locations may be going offline during active order windows more frequently than other markets. That points to a restaurant availability or operational reliability issue rather than a kitchen throughput issue. The caveat is that this inference is based on cancellation reason codes in a synthetic dataset confirming it would require looking at actual restaurant availability logs and understanding whether these closures are scheduled, unscheduled, or related to a specific operational trigger.
 
 The combined effect of high cancellations and high refund rates creates a poor customer experience that likely contributes to the acquisition decline identified in the growth section. As noted there, the causal link between first-order failures and acquisition suppression is a hypothesis supported by the pattern in the data, not a directly measured finding.
+
+![Refund and Cancellation Rates](Dashboards/Refund%20and%20cancellation%20rates.png)
 
 ---
 
@@ -165,5 +167,5 @@ All data in this project is synthetic. The dataset was generated in Python to si
 
 The analysis is structured as a QBR exercise. The findings and recommendations reflect what the data suggests — several are framed as hypotheses that would require additional data to validate fully. The additional data that would most strengthen the analysis includes: first-order cohort retention rates by market, restaurant availability logs for Tier 3 markets, DashPass conversion benchmarks across merchants by city, and peak-hour order density by location. These limitations are noted where relevant throughout the report.
 
-Full dataset design details and metric definitions are in `02_data_dictionary.md`.
+Full dataset design details and metric definitions are in `data_dictionary.md`.
 
